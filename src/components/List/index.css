@@ -1,0 +1,8 @@
+.main{
+    width: 50%;
+    height: auto;
+    margin: 1% auto;
+    display: flex;
+    align-items:flex-start;
+    z-index: 2;
+}

@@ -28,4 +28,16 @@ export default defineConfig({
       public: `${path.resolve(__dirname, './public/')}`,
     },
   },
+  proxy: {
+    '/api1': {
+      target: 'http://q1.qlogo.cn',
+      changeOrigin: true,
+      rewrite: path => path.replace(/^\/api1/, '/'),
+    },
+    '/api2': {
+      target: 'http://users.qzone.qq.com/fcg-bin',
+      changeOrigin: true,
+      rewrite: path => path.replace(/^\/api2/, '/'),
+    },
+  },
 });

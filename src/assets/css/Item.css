@@ -1,0 +1,129 @@
+.list{
+    width: 100%;
+    height: 1350px;
+    flex:0 1 ;
+
+    .item{
+        width: 100%;
+        height: 250px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+        margin-bottom: 20px;
+        position: relative;
+
+        .pic{
+            width: 30%;
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+            object-fit: cover;
+            margin: 0;
+            padding: 0;
+
+            & img {
+                width: 100%;
+                height: 100%;
+                border: none;
+            };
+        };
+
+        .detail {
+            width: 70%;
+            height: 250px;
+            box-shadow: 0 0 30px 10px rgba(0, 0, 0, .3);
+            backdrop-filter: blur(10px);
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex: 1 1 auto;
+            position: relative;
+            overflow: hidden;
+
+            .blur-background {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-size: cover;
+                background-position: center;
+                filter: blur(50px);
+            };
+            .content {
+                position: relative;
+                z-index: 1;
+            };
+            .icon{
+                padding: 0;
+                margin: 0;
+                display:inline-block;
+                height: 50px;
+                vertical-align:middle;
+            };
+            & h3 {
+                font-size: 25px;
+                margin:30px 30px;
+            };
+            .phrases{
+                letter-spacing: .06rem;
+                text-shadow: 0 0.1875rem 0.3125rem;
+                padding:0 30px;
+                margin-top: 30px;
+                text-indent:2em;
+            };
+        };
+        & ul {
+            width: 100%;
+            height: 50px;
+            list-style: none;
+            margin: 20px 0 0 0 ;
+            padding: 0;
+
+            & li {
+                width: 33%;
+                height: 50px;
+                display: inline;
+                line-height: 50px;
+                font-size: 15px;
+                margin: 0 10%;
+            };
+        }
+    };
+    .even-item {
+        .pic {
+            width: 30%;
+        }
+        .detail {
+            width: 70%;
+        }
+    }
+    .odd-item {
+        flex-direction: row-reverse;
+        .pic {
+            width: 30%;
+        }
+        .detail {
+            width: 70%;
+        }
+    }
+    .btn{
+        width: 100%;
+        flex:auto;
+
+        & button {
+            width: 200px;
+            height: 40px;
+            border-radius: 20px;
+            font-size: 16px;
+            background-color: #2F88FF;
+            color: white;
+            border: none;
+
+        };
+        & button:hover {
+            background-color: #43CCF8;
+        };
+    }
+}

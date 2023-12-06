@@ -1,0 +1,76 @@
+.header {
+    width: 100%;
+    height: 500px;
+    background-image: url("../../assets/bac.jpg");
+    background-size: cover;
+    z-index: 2;
+    position: relative;
+    overflow: hidden;
+
+    .navigation{
+        width: 100%;
+        height: 50px;
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.4);
+        display: flex;
+        overflow: hidden;
+
+        .name{
+            width: 15%;
+            line-height: 50px;
+            font-family: Consolas, serif;
+            font-size: 20px;
+            float: left;
+            margin: 0 2%;
+        };
+        .func{
+            width: 60%;
+            height: 50px;
+            position: relative;
+            margin: 0 2%;
+        };
+        .search{
+            width: 15%;
+            height: 50px;
+            line-height: 50px;
+            float: right;
+            margin: 0 5%;
+        };
+
+        & ul{
+            width: 100%;
+            height: 50px;
+            list-style: none;
+            margin: 0;
+
+            & li{
+                width: 10%;
+                display: inline;
+                line-height: 50px;
+                font-family: YouYuan, serif;
+                font-size: 21px;
+                margin: 0 2%;
+
+                .icon{
+                    padding: 0;
+                    margin: 0;
+                    display:inline-block;
+                    height: 50px;
+                    vertical-align:middle;
+                };
+            };
+        };
+    };
+    .clause{
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        margin-top: 200px;
+        font-size: 20px;
+
+        .text{
+            font-size: 30px;
+        };
+    };
+}

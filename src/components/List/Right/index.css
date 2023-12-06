@@ -1,0 +1,100 @@
+.right{
+    width: 20%;
+    height: auto;
+    margin-left: 20px;
+    flex:auto;
+
+    .msg1{
+        width: 100%;
+        height: 300px;
+        border-radius: 5px;
+        overflow: hidden;
+        text-align: center;
+        margin-bottom: 20px;
+
+        .top{
+            width: 100%;
+            height: 120px;
+
+            & img{
+                width: 100%;
+                height: 120px;
+            };
+        };
+        .mid{
+            width: 100%;
+            height: 120px;
+            border-bottom:1px solid rgb(128, 128, 128);
+            color: #333;
+
+        };
+        .mid img{
+            width: 60px;
+            height: 60px;
+            margin: -30px auto 0;
+            border-radius: 50%;
+            transition: all 1.2s;
+        }
+        .mid img:hover{
+            transform: rotate(360deg);
+        }
+        .below{
+            width: 100%;
+            height: 60px;
+            font-size: 15px;
+
+            & table {
+                width: 100%;
+                height: 60px;
+            };
+        };
+        .dayMode {
+            background-color: white;
+        }
+
+        .nightMode {
+            background-color: #333;
+            color: white;
+        }
+    };
+    .msg2{
+        width: 100%;
+        height: 500px;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-bottom: 20px;
+
+        .label{
+            width: 100%;
+            height: 40px;
+            font-size: 16px;
+            padding: 0 10px;
+            border-bottom: 1px solid rgb(128, 128, 128);
+
+            .icon{
+                padding: 0;
+                margin: 0;
+                display:inline-block;
+                font-size: 20px;
+                vertical-align:middle;
+                height: 40px;
+                line-height: 40px;
+            };
+        };
+        .labelList{
+            width: 100%;
+            height: 460px;
+
+            & button{
+                margin: 5px 5px;
+            };
+        }
+    }
+    .dayMode {
+        background-color: white;
+    }
+    .nightMode {
+        background-color: #333;
+        color: white;
+    }
+}
