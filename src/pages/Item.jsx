@@ -4,7 +4,7 @@ import {CalendarThirtyTwo, Fire, TagOne} from "@icon-park/react";
 import "../assets/css/Item.css"
 
 function Item(props) {
-    const {visibleItems,handleEssayClick,handleShowAll,showAll,onEssayClick} = props
+    const {visibleItems,handleEssayClick,handleShowAll,showAll} = props
     return (
         <div className="list">
             {visibleItems.map((essayObj,index) => {
