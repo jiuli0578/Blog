@@ -2,13 +2,21 @@
     width: 100%;
     height: auto;
 
+    .dayMode {
+        background: linear-gradient(90deg, rgba(150, 150, 150, 0.1) 1px, transparent 1px) 0 0 / 20px 20px,
+        linear-gradient(rgba(150, 150, 150, 0.1) 1px, transparent 1px) 0 0 / 20px 20px;
+        background-color: white;
+    }
+    .nightMode {
+        background: linear-gradient(90deg, rgba(234, 234, 234, 0.1) 1px, transparent 1px) 0 0 / 20px 20px,
+        linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px) 0 0 / 20px 20px;
+        background-color: #333;
+        color: white;
+    }
     .essay{
         width: 100%;
         height: auto;
         border-radius: 5px;
-        background: linear-gradient(90deg, rgba(150, 150, 150, 0.1) 1px, transparent 1px) 0 0 / 20px 20px,
-        linear-gradient(rgba(150, 150, 150, 0.1) 1px, transparent 1px) 0 0 / 20px 20px;
-        background-color: white;
 
         .top{
             display: flex;
@@ -155,9 +163,6 @@
         width: 100%;
         height: auto;
         border-radius: 5px;
-        background: linear-gradient(90deg, rgba(150, 150, 150, 0.1) 1px, transparent 1px) 0 0 / 20px 20px,
-        linear-gradient(rgba(150, 150, 150, 0.1) 1px, transparent 1px) 0 0 / 20px 20px;
-        background-color: white;
 
         .top{
             width: 95%;
@@ -261,7 +266,74 @@
             width: 95%;
             height: auto;
             margin: auto;
-            background-color: #5bc0de;
+
+            .showAll{
+                display: flex;
+                flex-wrap: wrap;
+                /*background-color: #5bc0de;*/
+
+                .avatar{
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    /*background-color: #5bc0de;*/
+                    display: flex;
+                    align-items: center;
+
+                    & img{
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        max-width: 100%;
+                        max-height: 100%;
+                    }
+                }
+                .contact{
+                    width: 90%;
+                    height: 50px;
+                    margin-left: 10px;
+                    /*background-color: #4cae4c;*/
+
+                    .nickname{
+                        width: auto;
+                        height: 30px;
+                        line-height: 30px;
+                        font-size: 16px;
+                        color: #2F88FF;
+                        /*background-color: #4cae4c;*/
+                        display: flex;
+
+                       .img{
+                           width: auto;
+                           height: 30px;
+                           margin-left: 20px;
+                           & img{
+                               width: 20px;
+                               height: 20px;
+                               margin-right: 10px;
+                           }
+                       }
+                    }
+                    .date{
+                        width: auto;
+                        height: 20px;
+                        line-height: 20px;
+                        font-size: 13px;
+                        /*background-color: #5bc0de;*/
+                    }
+                }
+                .textarea{
+                    width: 90%;
+                    margin-left: 60px;
+                    height: auto;
+                    /*background-color: #F4F6FB;*/
+                    border-radius: 5px;
+                    margin-bottom: 20px;
+                    padding: 10px;
+                    color: #000;
+                }
+            }
         }
     }
+
 }
