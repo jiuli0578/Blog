@@ -1,12 +1,16 @@
 import React, {useEffect} from "react"
 import {useNavigate, useParams} from "react-router-dom";
 import "./index.css"
-import EssayDetail from "../../../pages/EssayDetail.jsx";
-import Item from "../../../pages/Item.jsx";
+import EssayDetail from "../../../pages/EssayDetail";
+import Item from "../../../pages/Item";
+import Work from "../../../pages/Work"
+import Label from "../../../pages/Label.jsx";
+import FrdC from "../../../pages/FrdC.jsx";
+import About from "../../../pages/About.jsx";
 
 export default function Left(props) {
 
-    const {essayArr,onLike,onEssayClick} = props
+    const {essayArr,labelArr,onLike,onEssayClick,ListBac,comments,setComments} = props
 
     // 获取路由参数
     const { category,id } = useParams();
@@ -18,7 +22,7 @@ export default function Left(props) {
 
     const [selectedEssay, setSelectedEssay] = React.useState(null);
     // 动态控制文章列表展示区高度
-    const leftHeight = showAll ? 'auto' : `${visibleItems.length * 270 + 50}px`;
+    const leftHeight = showAll  ? `${visibleItems.length * 270 + 50}px` : 'auto';
 
 
     // 更改是否展示全部状态的回调
@@ -57,13 +61,27 @@ export default function Left(props) {
 
         setVisibleItems(showAll ? filteredEssays : filteredEssays.slice(0, 5));
     }, [category, essayArr, showAll]);
+
     return (
         <div className="left"  style={{ height: leftHeight }}>
-            {selectedEssay ? (
-                <EssayDetail essay={selectedEssay} essayArr={essayArr} onLike={onLike}/>
-            ) : (
-                <Item visibleItems={visibleItems} handleEssayClick={handleEssayClick} showAll={showAll} handleShowAll={handleShowAll} onEssayClick={onEssayClick}/>
-            )}
+            {(() => {
+                switch (category){
+                    case 'work':
+                        return <Work ItemBac={ListBac} essayArr={essayArr} comments={comments} labelArr={labelArr}/>
+                    case 'label':
+                        return <Label ItemBac={ListBac}/>
+                    case 'frdC':
+                        return <FrdC/>
+                    case 'about':
+                        return <About/>
+                    default:
+                        return (selectedEssay ? (
+                            <EssayDetail essay={selectedEssay} ItemBac={ListBac} essayArr={essayArr} onLike={onLike} comments={comments} setComments={setComments}/>
+                        ) : (
+                            <Item visibleItems={visibleItems} handleEssayClick={handleEssayClick} showAll={showAll} handleShowAll={handleShowAll} onEssayClick={onEssayClick}/>
+                        ))
+                }
+            })()}
         </div>
     )
 }

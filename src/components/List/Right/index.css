@@ -59,7 +59,7 @@
     };
     .msg2{
         width: 100%;
-        height: 500px;
+        height: auto;
         border-radius: 5px;
         overflow: hidden;
         margin-bottom: 20px;
@@ -83,12 +83,18 @@
         };
         .labelList{
             width: 100%;
-            height: 460px;
+            height: auto;
 
             & button{
                 margin: 5px 5px;
             };
         }
+    }
+    .msg3{
+        width: 100%;
+        height: 300px;
+        border-radius: 5px;
+        background-color: white;
     }
     .dayMode {
         background-color: white;

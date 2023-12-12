@@ -4,6 +4,7 @@ import {AdProduct, Bookshelf, Like, LinkOne, Moon, Music, Search, SunOne, TagOne
 import {NavLink, useNavigate} from "react-router-dom";
 import {Input, Modal, Tooltip} from "antd";
 import axios from "axios";
+import useTypewriter from "react-typewriter-hook"
 export default function Header(props) {
     // 搜索的回调
     const [isModalOpen, setIsModalOpen] = React.useState(false);
@@ -30,17 +31,27 @@ export default function Header(props) {
         navigate('/');
     };
     // 生成随机句子的axios请求
-    useEffect(()=>{
-        axios.get("https://v1.hitokoto.cn/").then(
-            response => {
-                setClause(response.data.hitokoto)
-            },
-            error => {
-                console.log("出错了",error)
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get("https://v1.hitokoto.cn/");
+                const data = response.data.hitokoto
+                setClause(data.substring(0, data.length - 1));
+            } catch (error) {
+                console.error("出错了", error);
             }
-        )
-    },[])
+        };
 
+        // 初始加载
+        fetchData();
+
+        // 设置定时器每隔10秒发送一次请求
+        const intervalId = setInterval(fetchData, 30000);
+
+        // 在组件卸载时清除定时器，以防止内存泄漏
+        return () => clearInterval(intervalId);
+    }, []);
+    const talk = useTypewriter(clause)
     return (
         <nav className="header">
             <div className="navigation">
@@ -49,7 +60,7 @@ export default function Header(props) {
                     <ul>
                         <li><NavLink to="/life"><Terrace className="icon" theme="outline" size="20" fill="#333"/>生活</NavLink></li>
                         <li><NavLink to="/study"><Bookshelf className="icon" theme="outline" size="20" fill="#333"/>学习</NavLink></li>
-                        <li><NavLink to="/work"><AdProduct className="icon" theme="outline" size="20" fill="#333"/>作品</NavLink></li>
+                        <li><NavLink to="/work"><AdProduct className="icon" theme="outline" size="20" fill="#333"/>归档</NavLink></li>
                         <li><NavLink to="/label"><TagOne className="icon" theme="outline" size="20" fill="#333"/>标签</NavLink></li>
                         <li><NavLink to="/frdC"><LinkOne className="icon" theme="outline" size="20" fill="#333"/>友链</NavLink></li>
                         <li><NavLink to="/about"><Like className="icon" theme="outline" size="20" fill="#333"/>关于</NavLink></li>
@@ -82,7 +93,7 @@ export default function Header(props) {
             </div>
             <div className="clause">
                 <div className="text">✨JIULI-Blog✨<br/></div>
-                🌈{clause}🧸
+                🌈{talk}🧸
             </div>
         </nav>
     )
