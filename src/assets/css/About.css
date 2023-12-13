@@ -1,0 +1,83 @@
+.sy{
+    width: 100%;
+    height: auto;
+
+    .dayMode {
+        background: linear-gradient(90deg, rgba(150, 150, 150, 0.1) 1px, transparent 1px) 0 0 / 20px 20px,
+        linear-gradient(rgba(150, 150, 150, 0.1) 1px, transparent 1px) 0 0 / 20px 20px;
+        background-color: white;
+    }
+    .nightMode {
+        background: linear-gradient(90deg, rgba(234, 234, 234, 0.1) 1px, transparent 1px) 0 0 / 20px 20px,
+        linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px) 0 0 / 20px 20px;
+        background-color: #333;
+        color: white;
+    }
+    .about{
+        width: 100%;
+        height: 560px;
+        border-radius: 5px;
+
+        .top{
+            width: 95%;
+            height: 30px;
+            padding: 20px;
+        }
+        .midd{
+            width: 95%;
+            height: auto;
+            margin: 30px auto;
+            /*background-color: #2F88FF;*/
+
+            .abMe{
+                width: 100%;
+                height: 35px;
+                line-height: 35px;
+                font-family: "Microsoft YaHei UI", serif;
+                font-size: 20px;
+                font-weight: bold;
+                border-left: 4px solid blue;
+                padding-left: 10px;
+            }
+            .abLi{
+                width: 100%;
+                height: auto;
+                margin-top: 20px;
+                font-size: 14px;
+
+                & p{
+                    margin-bottom: 20px;
+                }
+            }
+            .bq{
+                 width: 100%;
+                 height: 135px;
+                 margin: 40px auto;
+                 border-radius: 5px;
+                 padding: 15px;
+                 background-color: #F8F9FA;
+
+                 .wz{
+                     width: 100%;
+                     height: 25px;
+                     line-height: 25px;
+                     margin-bottom: 15px;
+                     font-size: 12px;
+                     /*font-weight: 600;*/
+
+                     & img{
+                         width: 17px;
+                         height: 17px;
+                         margin-top: -2px;
+                     }
+                     & a{
+                         color: blue;
+                     }
+                     & a:hover{
+                         color: rgb(128, 128, 128);
+                     }
+                 }
+             }
+        }
+    }
+}
