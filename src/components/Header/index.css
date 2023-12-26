@@ -13,7 +13,6 @@
         backdrop-filter: blur(10px);
         background: rgba(255, 255, 255, 0.4);
         display: flex;
-        overflow: hidden;
 
         .name{
             width: 15%;
@@ -58,6 +57,74 @@
                     height: 50px;
                     vertical-align:middle;
                 };
+                .musicBox {
+                    width: 180px;
+                    height: auto;
+                    background-color: #fff;
+                    border-radius: 5px;
+                    position: absolute;
+                    top: 50px;
+                    z-index: 2;
+                    transition: opacity 0.5s;
+                    padding: 10px;
+
+                    .musicInfo{
+                        width: 100%;
+                        height: 50px;
+                        display: flex;
+
+                        .musicImg{
+                            width: 50px;
+                            height: 50px;
+                        }
+                        .musicImg img{
+                            width: 50px;
+                            height: 50px;
+                            margin-top: -5px;
+                            border-radius: 50%;
+                        }
+                        .musicPlayer{
+                            width: 150px;
+                            height: 50px;
+                            margin-left: 10px;
+
+                            .musicFunc{
+                                height: 40px;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            }
+                            .musicVolume{
+                                height: 10px;
+
+                                & input {
+                                    width: 95%;
+                                    height: 4px;
+                                    margin: auto;
+                                    border: 1px solid #ccc;
+                                    background-color: #f0f0f0;
+                                }
+                            }
+                        }
+                    }
+                    .musicList{
+                        width: 100%;
+                        height: auto;
+                        margin-top: 10px;
+
+                        .music{
+                            width: 100%;
+                            height: 25px;
+                            line-height: 25px;
+                            font-size: 12px;
+                            border-radius: 5px;
+                            padding-left: 10px;
+                        }
+                        .music:hover{
+                            background-color: #DFEDFB;
+                        }
+                    }
+                }
             };
         };
     };
@@ -73,4 +140,16 @@
             font-size: 30px;
         };
     };
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rotate {
+    animation: rotate 12s linear infinite;
 }
