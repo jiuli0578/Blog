@@ -72,6 +72,10 @@
                 padding:0 30px;
                 margin-top: 30px;
                 text-indent:2em;
+                width: 45em;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space:nowrap;
             };
         };
         & ul {
